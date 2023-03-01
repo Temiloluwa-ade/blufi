@@ -1,0 +1,17 @@
+{
+  "name": "blufi",
+  "version": "0.0.1",
+  "description": "receive tips Blue fi",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "npm i && lerna bootstrap",
+    "start": "source .envrc && lerna run start:dev --parallel",
+    "flow:deploy": "cd cadence && flow deploy --update"
+  },
+  "keywords": [],
+  "author": "",
+
+  "devDependencies": {
+    "lerna": "^5.2.0"
+  }
+}
