@@ -25,13 +25,7 @@ export function ProfileDropdown(props: HTMLAttributes<HTMLDivElement>) {
 
   return (
     <>
-      {modalIsOpen && (
-        <WidgetGenerationModal
-          isOpen={true}
-          shouldCloseOnOverlayClick
-          onRequestClose={() => setIsModalOpen(false)}
-        />
-      )}
+      
       <Container {...props}>
         <Photo
           ref={photoRef}
@@ -50,11 +44,7 @@ export function ProfileDropdown(props: HTMLAttributes<HTMLDivElement>) {
             <DropdownItem onClick={() => navigate("/settings")}>
               {isRegistered ? "Profile settings" : "Create profile"}
             </DropdownItem>
-            {isRegistered && (
-              <DropdownItem onClick={() => setIsModalOpen(true)}>
-                Get my widget
-              </DropdownItem>
-            )}
+            
             {isLoggedIn && (
               <DropdownItem onClick={() => navigate("/").then(logout)}>
                 Logout
