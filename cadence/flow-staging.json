@@ -1,0 +1,35 @@
+{
+  "network": "flow-testnet",
+  "accounts": {
+    "service": {
+      "address": "cf886bcd0e6dcd1f",
+      "key": "bdb02a152a30eadb13d2dc80545b72fb2cbb36fa9b2071d8d9fdf8a3817c3304"
+    }
+  },
+    "networks": {
+        "testnet": "access.devnet.nodes.onflow.org:9000"
+    },
+  "contracts": {
+    "Blufi": {
+        "source": "./contracts/Blufi.cdc",
+        "payer": {
+            "address": "cf886bcd0e6dcd1f",
+            "keyId": 0,
+            "signAlgo": "ECDSA_P256",
+            "hashAlgo": "SHA3_256"
+        }
+    },
+    "FungibleToken": {
+        "source": "./contracts/core/FungibleToken.cdc",
+        "aliases": {
+            "testnet": "9a0766d93b6608b7"
+        },
+        "payer": {
+            "address": "cf886bcd0e6dcd1f",
+            "keyId": 0,
+            "signAlgo": "ECDSA_P256",
+            "hashAlgo": "SHA3_256"
+        }   
+    }
+}
+}

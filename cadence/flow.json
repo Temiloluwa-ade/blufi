@@ -1,0 +1,48 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3569,
+      "serviceAccount": "emulator-account"
+    }
+  },
+  "contracts": {
+    "Blufi": "./contracts/Blufi.cdc",
+    "FungibleToken": {
+      "source": "./contracts/core/FungibleToken.cdc",
+      "aliases": {
+        "testnet": "9a0766d93b6608b7",
+        "emulator": "ee82856bf20e2aa6"
+      }
+    }
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "cf886bcd0e6dcd1f",
+      "key": "bdb02a152a30eadb13d2dc80545b72fb2cbb36fa9b2071d8d9fdf8a3817c3304"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": [
+        {
+          "name": "Blufi",
+          "args": [
+            {
+              "type": "Address",
+              "value": "0xcf886bcd0e6dcd1f"
+            },
+            {
+              "type": "UFix64",
+              "value": "0.05"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

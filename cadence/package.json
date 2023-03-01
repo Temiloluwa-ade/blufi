@@ -1,0 +1,20 @@
+{
+  "name": "bluefi-flow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "concurrently --kill-others --names emulator,dev-wallet \"npm:flow-emulator:start\" \"npm:flow-dev-wallet:start\"",
+    "flow-emulator:start": "flow emulator --contracts",
+    "flow-deploy": "flow deploy",
+    "flow-dev-wallet:start": "flow dev-wallet",
+    "flow-deploy:staging": "flow project deploy --network=testnet -f flow-staging.json",
+    "flow-deploy:development": "flow project deploy --update --network=emulator",
+    "flow-update-contract-sources": "curl https://raw.githubusercontent.com/onflow/flow-ft/master/contracts/FungibleToken.cdc > ./cadence/contracts/core/FungibleToken.cdc"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
